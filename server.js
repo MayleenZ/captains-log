@@ -54,14 +54,14 @@ app.get("/logs/:id/edit", (req, res) => {
   });
 });
 
-app.put("logs/:id", (req, res) => {
+app.put("/logs/:id", (req, res) => {
   req.body.shipIsBroken = req.body.shipIsBroken === "on" ? true : false;
   Log.findByIdAndUpdate(
     req.params.id,
     req.body,
     { new: true },
     (error, updatedLog) => {
-      res.redirect(`logs/${req.params.id}`);
+      res.redirect(`/logs/${req.params.id}`);
     }
   );
 });

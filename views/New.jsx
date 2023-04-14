@@ -4,9 +4,9 @@ function New(){
     return(
         <div>
             <form action = '/logs' method = 'POST'>
-            Title: <input type="text" />
-            Entry: <input type="textarea"/>
-            Ship is Broken: <input type="checkbox"/>
+            Title: <input type="text" name = "title"/>
+            Entry: <input type="textarea" name = "entry"/>
+            Ship is Broken: <input type="checkbox" name = "shipIsBroken"/>
              <input type="submit" value= "submit"/>
             </form>
         </div>

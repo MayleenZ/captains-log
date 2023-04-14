@@ -5,16 +5,23 @@ function Index({ logs }) {
     <div>
       <ul>
         {logs.map((log, i) => {
-          <li key = {log._id}>
-            <a href ={`/logs/${log._id}`}>{log.title}</a>
-            {log.entry}
-            {log.shipisBroken ? "It is broken" : "ship is good to go"}
-            <form method="POST" action={`logs/${log.id}?_method=DELETE`}>
-              <input type="submit" value="delete" />
-            </form>
-          </li>;
+          return (
+            <li key={log._id}>
+              Title: <a href={`/logs/${log._id}`}>{log.title}</a>
+              < br/>
+              Entry: {log.entry}
+              < br/>
+              {log.shipIsBroken ? "  Ship is broken" : "  Ship is good to go"}
+              <a href={`/logs/${log._id}/edit`}> Edit</a>
+              <form method="POST" action={`/logs/${log.id}?_method=DELETE`}>
+                <input type="submit" value="X" />
+              </form>
+            </li>
+            
+          );
         })}
       </ul>
+      <hr/>
     </div>
   );
 }
