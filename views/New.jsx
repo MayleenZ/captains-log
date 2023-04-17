@@ -3,6 +3,7 @@ const React = require('react')
 function New(){
     return(
         <div>
+            < a href='/logs'>All Logs</a>
             <form action = '/logs' method = 'POST'>
             Title: <input type="text" name = "title"/>
             Entry: <input type="textarea" name = "entry"/>

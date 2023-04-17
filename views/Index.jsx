@@ -3,6 +3,7 @@ const React = require("react");
 function Index({ logs }) {
   return (
     <div>
+      <a href = "/createlog" >Create Logs</a>
       <ul>
         {logs.map((log, i) => {
           return (

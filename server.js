@@ -19,7 +19,7 @@ app.use(methodOverride("_method"));
 
 //* Routes
 app.get("/", (req, res) => {
-  res.send("<h1>Logs</h1>");
+  res.redirect('/logs');
 });
 
 app.get("/logs", (req, res) => {
@@ -61,7 +61,7 @@ app.put("/logs/:id", (req, res) => {
     req.body,
     { new: true },
     (error, updatedLog) => {
-      res.redirect(`/logs/${req.params.id}`);
+      res.redirect(`/logs/`);
     }
   );
 });
